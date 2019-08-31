@@ -6,7 +6,9 @@
     * Custom Hooks
     * Context
 - Firebase
+- Moment.js
 - React Testing Library (unit & integration testing)
 - SCSS (CSS)
 - Responsive Design
 - Accessible
+- [BEM](http://getbem.com/introduction/)
