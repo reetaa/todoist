@@ -6,14 +6,18 @@ export const Header = () => {
     <header className="header" data-testid="header">
       <nav>
         <div className="logo">
-          <img src="/images/logo.svg" alt="Todoist" />
+          <img src="/images/logo.png" alt="Tdsfdsfdsfdodoist" />
         </div>
-        <ul>
-          <li>+</li>
-          <li>
-            <FaPizzaSlice />
-          </li>
-        </ul>
+        <div className="settings">
+          <ul>
+            <li data-testid="settings__add" className="settings__add">
+              +
+            </li>
+            <li data-testid="settings__darkmode" className="settings__darkmode">
+              <FaPizzaSlice />
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
   );

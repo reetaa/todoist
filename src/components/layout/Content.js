@@ -4,9 +4,9 @@ import { Tasks } from "../Tasks";
 
 export const Content = () => {
   return (
-    <secton>
+    <section>
       <Sidebar />
       <Tasks />
-    </secton>
+    </section>
   );
 };

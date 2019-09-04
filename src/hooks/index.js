@@ -45,6 +45,7 @@ export const useProjects = () => {
   useEffect(() => {
     firebase
       .firestore()
+      .collection("projects")
       .where("userId", "==", "N3TFT2FLXrSHyF0hUhAR")
       .orderBy("projectId")
       .get()
@@ -54,6 +55,7 @@ export const useProjects = () => {
           docId: project.id
         }));
         if (JSON.stringify(allProjects) !== JSON.stringify(projects)) {
+          setProjects(allProjects);
         }
       });
   }, [projects]);

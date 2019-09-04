@@ -1,13 +1,19 @@
 import React from "react";
 import { Header } from "./components/layout/Header";
-import { Sidebar } from "./components/layout/Sidebar";
+import { Content } from "./components/layout/Content";
+import "./App.scss";
+import { ProjectsProvider, SelectedProjectProvider } from "./context";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Sidebar />
-    </div>
+    <SelectedProjectProvider>
+      <ProjectsProvider>
+        <div className="App">
+          <Header />
+          <Content />
+        </div>
+      </ProjectsProvider>
+    </SelectedProjectProvider>
   );
 }
 
