@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { firebase } from "../firebase";
 import moment from "moment";
-import { collatedTasksExists } from "../helpers";
+import { collatedTasksExist } from "../helpers";
 
 export const useTasks = selectedProject => {
   const [tasks, setTasks] = useState([]);
@@ -12,7 +12,7 @@ export const useTasks = selectedProject => {
       .collection("tasks")
       .where("userId", "==", "N3TFT2FLXrSHyF0hUhAR");
     unsubscribe =
-      selectedProject && !collatedTasksExists(selectedProject)
+      selectedProject && !collatedTasksExist(selectedProject)
         ? (unsubscribe = unsubscribe.where("projectId", "==", selectedProject))
         : selectedProject === "TODAY"
         ? unsubscribe.where("date", "==", moment().format("DD/MM/YYYY"))
