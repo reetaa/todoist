@@ -1,19 +1,23 @@
 import React from "react";
 import { FaPizzaSlice } from "react-icons/fa";
 
-export const Header = () => {
+export const Header = ({ darkMode, setDarkMode }) => {
   return (
     <header className="header" data-testid="header">
       <nav>
         <div className="logo">
-          <img src="/images/logo.png" alt="Tdsfdsfdsfdodoist" />
+          <img src="/images/logo.png" alt="Todoist" />
         </div>
         <div className="settings">
           <ul>
             <li data-testid="settings__add" className="settings__add">
               +
             </li>
-            <li data-testid="settings__darkmode" className="settings__darkmode">
+            <li
+              data-testid="settings__darkmode"
+              className="settings__darkmode"
+              onClick={() => setDarkMode(!darkMode)}
+            >
               <FaPizzaSlice />
             </li>
           </ul>
