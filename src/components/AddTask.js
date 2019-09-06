@@ -78,7 +78,11 @@ export const AddTask = ({
 
       {(showMain || showQuickAddTask) && (
         <div className="add-task__main" data-testid="add-task-main">
-          {showQuickAddTask && <h2 className="header">Quick Add Task</h2>}
+          {showQuickAddTask && (
+            <h2 className="header" data-testid="quick-add-task">
+              Quick Add Task
+            </h2>
+          )}
           <ProjectOverlay
             setProject={setProject}
             showProjectOverlay={showProjectOverlay}
