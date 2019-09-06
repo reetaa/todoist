@@ -78,32 +78,7 @@ export const AddTask = ({
 
       {(showMain || showQuickAddTask) && (
         <div className="add-task__main" data-testid="add-task-main">
-          {showQuickAddTask && (
-            <>
-              <div data-testid="quick-add-task">
-                <h2 className="header">Quick Add Task</h2>
-                <span
-                  className="add-task__cancel-x"
-                  data-testid="add-task-quick-cancel"
-                  aria-label="Cancel adding task"
-                  onClick={() => {
-                    setShowMain(false);
-                    setShowProjectOverlay(false);
-                    setShowQuickAddTask(false);
-                  }}
-                  onKeyDown={() => {
-                    setShowMain(false);
-                    setShowProjectOverlay(false);
-                    setShowQuickAddTask(false);
-                  }}
-                  tabIndex={0}
-                  role="button"
-                >
-                  X
-                </span>
-              </div>
-            </>
-          )}
+          {showQuickAddTask && <h2 className="header">Quick Add Task</h2>}
           <ProjectOverlay
             setProject={setProject}
             showProjectOverlay={showProjectOverlay}
@@ -134,6 +109,27 @@ export const AddTask = ({
           >
             Add Task
           </button>
+          {showQuickAddTask && (
+            <span
+              className="add-task__cancel"
+              data-testid="add-task-quick-cancel"
+              aria-label="Cancel adding task"
+              onClick={() => {
+                setShowMain(false);
+                setShowProjectOverlay(false);
+                setShowQuickAddTask(false);
+              }}
+              onKeyDown={() => {
+                setShowMain(false);
+                setShowProjectOverlay(false);
+                setShowQuickAddTask(false);
+              }}
+              tabIndex={0}
+              role="button"
+            >
+              Cancel
+            </span>
+          )}
           {!showQuickAddTask && (
             <span
               className="add-task__cancel"
